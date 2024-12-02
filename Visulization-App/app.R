@@ -17,13 +17,13 @@ numeric_cols <- c("Index",
                   )
 
 ui <- fluidPage(
-  titlePanel("Dynamic Column Plotter"),
+  titlePanel("Spotify Data Visualization"),
   sidebarLayout(
     sidebarPanel(
-      selectInput("x_var", "Choose Independent Variable (X-axis):",
+      selectInput("x_var", "X-axis:",
                   choices = numeric_cols,
                   selected = "Year"),
-      selectInput("y_var", "Choose Dependent Variable (Y-axis):",
+      selectInput("y_var", "Y-axis",
                   choices = numeric_cols,
                   selected = "Danceability")
     ),
