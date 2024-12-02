@@ -30,9 +30,12 @@ ui <- fluidPage(
       selectInput("y_var", "Y-axis",
                   choices = numeric_cols,
                   selected = "Danceability"),
-      selectInput("z_var", "Z-axis",
-                  choices = numeric_cols,
-                  selected = "Energy")
+      conditionalPanel(
+        condition = "input.dim == '3D'",
+        selectInput("z_var", "Z-axis",
+                    choices = numeric_cols,
+                    selected = "Energy")
+      )
     ),
     mainPanel(
       plotlyOutput("scatterPlot"),
